@@ -10,6 +10,13 @@ class BooksController < ApplicationController
   	redirect_to "/books"
   end
 
+  def show
+  	@book = Book.find_by(params[:id])
+  end
+
+
+
+private
   def book_params
   	params.require(:book).permit(:title, :body)
   end

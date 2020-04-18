@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get '/books' => 'books#new'
   get '/' => 'homes#top'
   post '/books' => 'books#create'
+  get '/books/:id' => 'books#show'
 end
