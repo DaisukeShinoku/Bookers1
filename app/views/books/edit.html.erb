@@ -4,7 +4,7 @@
 	<% if @book.errors %>
 	  <ul>
     	<% @book.errors.full_messages.each do |message| %>
-      	<li><%= message %></li>
+      	<p class="alert"><%= message %></p>
     	<% end %>
     <% end %>
 
@@ -12,8 +12,10 @@
     <%= f.text_field :title %>
     <h4>Body</h4>
     <%= f.text_area :body %>
-    <%= f.submit 'Update Book' %>
+
+    <div class="btn"><%= f.submit 'Update Book' %></div>
 <% end %>
 
 <%= link_to "Show", book_path(@book.id) %>
+<%= "|" %>
 <%= link_to "Back", books_path %>

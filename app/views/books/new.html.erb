@@ -23,17 +23,20 @@
 <% end %>
 </table>
 
-<h1>New Book</h1>
+<h2>New Book</h2>
 
 <%= form_for(@book, url: '/books') do |f| %>
 
-	<% if @book.errors %>
-	  <ul>
-    	<% @book.errors.full_messages.each do |message| %>
-      	<li><%= message %></li>
-    	<% end %>
-  	</ul>
-	<% end %>
+	<% if @book.errors.any? %>
+	<div class="error_explanation">
+     <h4 class="error_title"><%= @book.errors.count %>errors prohibited this book from being saved:</h4>
+     <ul>
+      <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+     </ul>
+    </div>
+  <% end %>
 
     <h4>Title</h4>
     <%= f.text_field :title %>
@@ -41,6 +44,6 @@
     <h4>Body</h4>
     <%= f.text_area :body %>
 
-    <%= f.submit 'create book' %>
+    <div class="btn"><%= f.submit 'Create book' %></div>
 
 <% end %>
