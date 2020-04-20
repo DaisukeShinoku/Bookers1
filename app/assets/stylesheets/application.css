@@ -24,9 +24,8 @@ body{
 
 
 li {
-	list-style-type: square;
+	list-style: none;
 	font-size:12px;
-	margin-left: 30px;
 }
 
 h1 {
@@ -77,16 +76,12 @@ td{
 	color:green;
 }
 
-.alert{
-	list-style: square;
-}
-
 .error_title{
-	    text-align: left;
+	text-align: left;
     font-weight: bold;
     padding: 5px 5px 5px 15px;
     font-size: 12px;
-    margin: -12px;
+    margin: -7px;
     margin-bottom: 0;
     background-color: #c00;
     color: #fff;
@@ -99,4 +94,29 @@ td{
     padding-bottom: 0;
     margin-bottom: 20px;
     background-color: #f0f0f0;
+}
+
+.error_detail{
+    padding-inline-start:40px;
+}
+
+.error_msg{
+    list-style-type: square;
+}
+
+ul .form_title{
+    display: block;
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+ul .form_body{
+    display: block;
+    list-style: none;
+}
+
+div.field_with_errors {
+    padding: 2px;
+    background-color: red;
+    display: table;
 }
